@@ -913,6 +913,10 @@ impl App {
     pub fn quit(&self) {
         self.windows.borrow_mut().clear();
     }
+
+    pub fn destroy_window(&self, window_id: window::Id) -> Option<Window> {
+        self.windows.borrow_mut().remove(&window_id)
+    }
 }
 
 impl Proxy {
